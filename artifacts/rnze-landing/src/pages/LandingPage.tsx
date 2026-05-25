@@ -1,10 +1,11 @@
 import { Search, Menu, Download, ChevronRight, MonitorSmartphone, Wrench, Shield, Zap, Globe, Database } from "lucide-react";
+import { motion } from "framer-motion";
 
 const apps = [
   {
     icon: MonitorSmartphone,
     name: "RNZE Dashboard",
-    description: "Platform manajemen dan monitoring terpusat untuk semua layanan korporat Anda.",
+    description: "Platform monitoring terpusat dengan antarmuka intuitif untuk mengelola seluruh ekosistem aplikasi Anda.",
     version: "v2.4.1",
     size: "48 MB",
     platform: "Windows / macOS / Linux",
@@ -12,7 +13,7 @@ const apps = [
   {
     icon: Wrench,
     name: "RNZE DevTools",
-    description: "Toolkit pengembangan lengkap dengan compiler, debugger, dan testing suite.",
+    description: "Toolkit pengembangan lengkap — compiler, debugger, dan testing suite dalam satu paket ringan.",
     version: "v1.9.3",
     size: "120 MB",
     platform: "Windows / macOS",
@@ -20,7 +21,7 @@ const apps = [
   {
     icon: Shield,
     name: "RNZE SecureVault",
-    description: "Solusi enkripsi data enterprise-grade dengan manajemen kunci terpusat.",
+    description: "Solusi enkripsi data enterprise-grade dengan manajemen kunci end-to-end yang handal.",
     version: "v3.1.0",
     size: "22 MB",
     platform: "Windows / macOS / Android",
@@ -28,7 +29,7 @@ const apps = [
   {
     icon: Zap,
     name: "RNZE Launcher",
-    description: "Peluncur aplikasi cepat dan ringan dengan akses satu klik ke seluruh ekosistem.",
+    description: "Peluncur aplikasi cepat dan ringan dengan akses satu klik ke seluruh ekosistem RNZE.",
     version: "v1.0.5",
     size: "8 MB",
     platform: "Windows / Android",
@@ -36,7 +37,7 @@ const apps = [
   {
     icon: Globe,
     name: "RNZE Connect",
-    description: "Klien VPN dan proxy korporat dengan protokol keamanan tingkat militer.",
+    description: "Klien jaringan privat dengan protokol keamanan mutakhir untuk koneksi aman di mana saja.",
     version: "v2.2.0",
     size: "35 MB",
     platform: "Android / iOS",
@@ -44,7 +45,7 @@ const apps = [
   {
     icon: Database,
     name: "RNZE DataSync",
-    description: "Sinkronisasi dan backup data lintas perangkat secara real-time dan terenkripsi.",
+    description: "Sinkronisasi dan backup data lintas perangkat secara real-time dengan enkripsi penuh.",
     version: "v1.6.8",
     size: "55 MB",
     platform: "Windows / macOS / Android",
@@ -101,6 +102,15 @@ const socialLinks = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.08 },
+  }),
+};
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen w-full bg-white overflow-x-hidden">
@@ -108,9 +118,18 @@ export default function LandingPage() {
       {/* ── HEADER ── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
-          <span className="text-[#001E3C] font-extrabold text-base sm:text-lg tracking-[0.15em] uppercase select-none">
-            RNZECORPORATION
-          </span>
+          {/* Logo group */}
+          <div className="flex items-center gap-3">
+            {/* Logo placeholder */}
+            <div className="w-8 h-8 bg-[#003478] flex items-center justify-center shrink-0">
+              <span className="text-white font-black text-xs tracking-tight select-none">RZ</span>
+            </div>
+            <span className="text-[#001E3C] font-extrabold text-base sm:text-lg tracking-[0.15em] uppercase select-none">
+              RNZECORPORATION
+            </span>
+          </div>
+
+          {/* Right icons */}
           <div className="flex items-center gap-4">
             <button
               aria-label="Search"
@@ -130,7 +149,7 @@ export default function LandingPage() {
 
       {/* ── HERO ── */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background placeholder – deep navy gradient simulating cinematic banner */}
+        {/* Background – deep navy cinematic */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -146,7 +165,7 @@ export default function LandingPage() {
               "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",
           }}
         />
-        {/* Dim overlay for text contrast */}
+        {/* Dim overlay */}
         <div className="absolute inset-0 bg-black/30" />
 
         {/* Hero Content */}
@@ -157,8 +176,8 @@ export default function LandingPage() {
           <h1 className="text-white font-black uppercase tracking-tight leading-none text-4xl sm:text-6xl lg:text-7xl xl:text-8xl mb-8 sm:mb-10">
             RNZE APP<br />UNIVERSE
           </h1>
-          <p className="text-white/60 text-sm sm:text-base tracking-[0.1em] uppercase mb-10 sm:mb-12 font-light max-w-lg">
-            Semua aplikasi korporat dalam satu platform distribusi resmi
+          <p className="text-white/60 text-sm sm:text-base tracking-[0.1em] uppercase mb-10 sm:mb-12 font-light max-w-xl">
+            SEMUA APLIKASI KREATIF DAN UTILITAS TERBAIK DALAM SATU PLATFORM DISTRIBUSI RESMI
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full justify-center items-center">
             <a
@@ -185,20 +204,36 @@ export default function LandingPage() {
       {/* ── APP DIRECTORY ── */}
       <section id="apps" className="w-full bg-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          {/* Section header */}
-          <div className="mb-12 sm:mb-16 border-b border-gray-100 pb-8">
+
+          {/* Section header with scroll reveal */}
+          <motion.div
+            className="mb-12 sm:mb-16 border-b border-gray-100 pb-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <p className="text-[#003478] text-[10px] sm:text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               APPLICATION CATALOG
             </p>
             <h2 className="text-[#001E3C] font-extrabold uppercase tracking-tight text-2xl sm:text-4xl lg:text-5xl">
               DOWNLOAD CENTER
             </h2>
-          </div>
+          </motion.div>
 
-          {/* Grid */}
+          {/* Grid with staggered scroll reveal */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {apps.map((app) => (
-              <AppCard key={app.name} {...app} />
+            {apps.map((app, i) => (
+              <motion.div
+                key={app.name}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <AppCard {...app} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -209,7 +244,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
 
           {/* Logo */}
-          <div className="text-center mb-10">
+          <div className="flex items-center justify-center gap-3 mb-10">
+            <div className="w-8 h-8 bg-white/15 flex items-center justify-center shrink-0">
+              <span className="text-white font-black text-xs tracking-tight select-none">RZ</span>
+            </div>
             <span className="text-white font-extrabold text-base sm:text-lg tracking-[0.2em] uppercase">
               RNZECORPORATION
             </span>
@@ -249,7 +287,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Divider */}
+          {/* Divider + copyright */}
           <div className="border-t border-white/10 pt-8">
             <p className="text-center text-white/40 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase">
               © 2026 RNZECORPORATION ALL RIGHTS RESERVED.
@@ -277,7 +315,7 @@ function AppCard({
   platform: string;
 }) {
   return (
-    <div className="group bg-[#F5F7FA] border border-transparent hover:border-[#003478]/20 hover:bg-white transition-all duration-200 p-6 sm:p-7 flex flex-col gap-5">
+    <div className="group bg-[#F5F7FA] border border-transparent hover:border-[#003478]/20 hover:bg-white transition-all duration-200 p-6 sm:p-7 flex flex-col gap-5 h-full">
       {/* Icon + Name */}
       <div className="flex items-start gap-4">
         <div className="w-11 h-11 bg-[#003478] flex items-center justify-center shrink-0">
