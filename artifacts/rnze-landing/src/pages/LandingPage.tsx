@@ -119,7 +119,7 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
           {/* Logo group */}
-          <div className="flex items-center gap-2">
+          <div className="flex justify-start items-center gap-1.5">
             <img
               src="/rnze-logo.png"
               alt="RNZE Corporation Logo"
@@ -128,7 +128,7 @@ export default function LandingPage() {
             <img
               src="/rnze-wordmark.png"
               alt="RnzeCorporation"
-              className="h-8 sm:h-9 w-auto object-contain select-none"
+              className="h-8 sm:h-10 w-auto object-contain select-none"
             />
           </div>
 
@@ -247,26 +247,26 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
 
           {/* Logo */}
-          <div className="flex items-center justify-center gap-3 mb-10">
+          <div className="flex items-center justify-center gap-1.5 mb-12">
             <img
               src="/rnze-logo.png"
               alt="RNZE Corporation Logo"
-              className="w-10 h-10 object-contain shrink-0 brightness-0 invert"
+              className="w-14 h-14 object-contain shrink-0 brightness-0 invert"
             />
             <img
               src="/rnze-wordmark.png"
               alt="RnzeCorporation"
-              className="h-7 w-auto object-contain brightness-0 invert select-none"
+              className="h-10 w-auto object-contain brightness-0 invert select-none"
             />
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-4 mb-12">
+          <nav className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4 mb-14">
             {navLinks.map((link) => (
               <a
                 key={link}
                 href="#"
-                className="text-white/70 hover:text-white text-[10px] sm:text-xs tracking-[0.3em] uppercase font-medium transition-colors"
+                className="text-white hover:text-white/70 text-[11px] sm:text-xs tracking-[0.3em] uppercase font-semibold transition-colors"
               >
                 {link}
               </a>
