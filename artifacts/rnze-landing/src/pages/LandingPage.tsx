@@ -119,12 +119,13 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
           {/* Logo group */}
-          <div className="flex items-center gap-3">
-            {/* Logo placeholder */}
-            <div className="w-8 h-8 bg-[#003478] flex items-center justify-center shrink-0">
-              <span className="text-white font-black text-xs tracking-tight select-none">RZ</span>
-            </div>
-            <span className="text-[#001E3C] font-extrabold text-base sm:text-lg tracking-[0.15em] uppercase select-none">
+          <div className="flex items-center gap-4">
+            <img
+              src="/rnze-logo.png"
+              alt="RNZE Corporation Logo"
+              className="w-10 h-10 sm:w-11 sm:h-11 object-contain shrink-0"
+            />
+            <span className="text-[#001E3C] font-extrabold text-sm sm:text-base tracking-[0.12em] uppercase select-none leading-tight">
               RNZECORPORATION
             </span>
           </div>
@@ -244,10 +245,12 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-16">
 
           {/* Logo */}
-          <div className="flex items-center justify-center gap-3 mb-10">
-            <div className="w-8 h-8 bg-white/15 flex items-center justify-center shrink-0">
-              <span className="text-white font-black text-xs tracking-tight select-none">RZ</span>
-            </div>
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <img
+              src="/rnze-logo.png"
+              alt="RNZE Corporation Logo"
+              className="w-10 h-10 object-contain shrink-0 brightness-0 invert"
+            />
             <span className="text-white font-extrabold text-base sm:text-lg tracking-[0.2em] uppercase">
               RNZECORPORATION
             </span>
