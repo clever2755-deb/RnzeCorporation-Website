@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "buildCommand": "pnpm --filter @workspace/rnze-landing run build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "artifacts/rnze-landing/dist/public",
+  "env": {
+    "BASE_PATH": "/"
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
