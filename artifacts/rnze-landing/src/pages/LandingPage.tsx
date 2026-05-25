@@ -119,16 +119,16 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
           {/* Logo group */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <img
               src="/rnze-logo.png"
               alt="RNZE Corporation Logo"
-              className="w-9 h-9 sm:w-10 sm:h-10 object-contain shrink-0"
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0"
             />
             <img
               src="/rnze-wordmark.png"
               alt="RnzeCorporation"
-              className="h-6 sm:h-7 w-auto object-contain select-none"
+              className="h-8 sm:h-9 w-auto object-contain select-none"
             />
           </div>
 
