@@ -1,45 +1,47 @@
-# [Project name]
+# RNZE Corporation
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Landing page distribusi aplikasi resmi RNZECORPORATION — bergaya Dreamworks: clean, corporate-premium, solid color.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/rnze-landing run dev` — jalankan landing page (port dari $PORT)
+- `pnpm run typecheck` — full typecheck
+- `pnpm run build` — typecheck + build semua packages
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- React 19 + Vite 6
+- Tailwind CSS v4 (via @tailwindcss/vite)
+- Lucide React (icons)
+- Wouter (routing)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/rnze-landing/src/pages/LandingPage.tsx` — halaman utama (header, hero, app grid, footer)
+- `artifacts/rnze-landing/src/index.css` — tema warna korporat (navy #001E3C / #003478)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- React + Vite (bukan Next.js) — arsitektur monorepo Replit tidak mendukung Next.js natively; Vite memberikan experience yang identik untuk static landing page
+- Single-page app tanpa backend — tidak ada DB atau API yang dibutuhkan
+- Tailwind CSS v4 via @tailwindcss/vite plugin
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Landing page download aplikasi korporat RNZECORPORATION dengan:
+- Header sticky putih bersih
+- Hero section cinematic navy blue dengan tombol ghost Dreamworks-style
+- Grid katalog 6 aplikasi (1 kolom mobile, 3 kolom desktop)
+- Footer biru korporat (#003478) dengan navigasi dan 5 ikon sosial media
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Gaya visual Dreamworks: solid color, corporate-premium, BEBAS glow/neon/animasi berlebihan
+- Semua teks navigasi ALL-CAPS dengan letter-spacing renggang
+- Responsif sempurna desktop dan Android
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- Warna utama: Navy #001E3C (teks/aksen gelap), #003478 (footer & primary button)
+- Semua ikon sosial sudah terhubung ke URL resmi yang diberikan user
